@@ -1,12 +1,43 @@
-function Queue() {
+/*function Queue() {
     // Implementa la clase Queue
     // enqueue:   Agrega un valor a la queue.   Respeta el orden existente.
     // dequeue:   Remueve un valor de la queue.   Obedece a FIFO y respeta el underflow (cuando la queue tiene size cero, o sea, cuando no tiene ningún elemento).
     // size:   Devuelve el número de elementos que contiene la queue.
+
     this.array = [];
+}*/
+
+
+class Queue {
+    constructor(){
+        this.array = [];
+    }
+    enqueue(element) {
+        return this.array.push(element);
+    }
+    dequeue() {
+        if(this.array.length > 0) {
+            return this.array.shift();
+        }
+    }
+    
+    size(){
+        return this.array.length;
+    }
 }
 
+var queue = new Queue();
+queue.enqueue(1);
+queue.enqueue(2);
+queue.enqueue(4);
+queue.enqueue(8);
+queue.enqueue(18);
+//queue.dequeue();
+//queue.dequeue();
+console.log(queue.array);
+console.log(queue.size());
 
+//--------------------------------------------------------------------------------
 
 function cardGame() {
     // Implementar la función cardGame: a partir de dos Queue que va a recibir como paráemtros tiene
@@ -28,7 +59,36 @@ function cardGame() {
     //     A --> 4  vs  6 <-- B [6 > 4 entones gana la mano B y pone ambas cartas en su mazo, colocando primero la suya]
     //    - mazoUserA = [2,10,11]
     //    - mazoUserB = [6,9,10,3,6,4]
+
+
+    var mazoUserA = [1,1,1,1]
+    var mazoUserB = [1,1,1,1]
+
+    //[1,2,2,1]
+
+    //[1,1,2,1]
+
+    while((mazoUserA.length > 0) && (mazoUserB.length > 0)){
+
+    if(mazoUserA[0]===mazoUserB[0]){ 
+        mazoUserA.shift()
+        mazoUserB.shift()
+    }else if(mazoUserA[0]>mazoUserB[0]){
+        mazoUserA.push(mazoUserB.shift())
+    }else mazoUserB.push(mazoUserA.shift())
+    
+    }
+
+    if(mazoUserA.length === mazoUserB.length){
+        return "Game tie!"
+    }else if(mazoUserA.length === 0){
+        return "B wins!"
+    }else return "A wins!"
+
 }
+console.log(cardGame())
+
+//--------------------------------------------------------------------------------
 
 function sets() {
     // Implementa el metodo sets    

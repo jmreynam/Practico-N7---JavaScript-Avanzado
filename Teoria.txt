@@ -2,12 +2,34 @@ Con tus propias palabras completa las siguientes preguntas:
 
 - Pilas(Stacks)
 
+Son estructuras de datos cuya analogia se asemeja a una pila de platos, en donde el primer elemento que ingresa a tal estructura es el ultimo que sale de la misma.
+
 - Queue(colas)
+
+Es una estructura de datos cuya analogia se asemeja a una cola de personas, en ella el primer elemento que ingresa a la estructura es el ultimo en salir, contrario a un Stack. 
 
 - enqueue
 
+Es un método que permite agregar datos a las estructuras "Queue".
+
 - dequeue
+
+Es un método que permite retirar datos de la estructura "Queue", para ello el elemento retirado es el primero que ingreso a la estructura de datos y así sucesivamente.
 
 - sets
 
+Sets es un objeto que permite almacenar elementos sin orden en particular, pero que solamente permite que tales elementos aparezcan una única vez, es decir, es como un arreglo de datos en donde no se repiten ninguno de los elementos del mismo.
+
 - Explica por lo menos 3 instancias de los sets.
+
+*Set.prototype.add(value)
+
+Permite añadir un valor al objeto set y luego devolver a Set con tal valor.
+
+*Set.prototype.clear()
+
+Permite eliminar todos los elementos de Set.
+
+*Set.prototype.delete(value)
+
+Permite eliminar un elemento de Set asociado a "value", y lo que devuelve es un booleano dependiendo del resultado de la operacion "true" o "false".
