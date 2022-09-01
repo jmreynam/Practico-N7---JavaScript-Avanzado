@@ -96,3 +96,21 @@ function sets() {
     // Muestra la cantidad
     // Aqui tu codigo
 }
+
+function sets(arr1,arr2) {
+
+    var set1= new Set(arr1)
+    var set2= new Set(arr2)
+
+    var intersect = Array.from(set1).filter(element => set2.has(element))
+
+    var setfinal = new Set(intersect) //Convierto para luego mostrar el size
+    console.log(intersect)
+    return setfinal.size 
+}
+
+console.log(sets([1,1,10,35],[1,1,10,11]))
+
+
+
+
